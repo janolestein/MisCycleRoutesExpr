@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script defer src="/script.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script defer
+    src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=places">
+    </script>
+
+<head>
+</head>
+
+<body>
+
+    <div id="login-wrapper-wrapper">
+        <div id="login-wrapper">
+            <p id="headline-1stPage">Berlins Missing Bikelanes</p>
+            <form id="login-form" method="POST" action="/">
+                <div id="input-wrapper">
+                    <div id="username-error"></div>
+                    <input id="username-form" type="text" placeholder="Username" required>
+                    <div id="password-error"></div>
+                    <input id="password-form" type="password" placeholder="Password" required>
+                </div>
+                <div id="btn-wrapper">
+                    <button id="login-btn" type="submit" class="btnLogin">Login</button>
+                </div>
+            </form>
+
+        </div>
+        <footer>
+            <a href="https://www.htw-berlin.de/impressum/">Impressum</a>
+            <a href="https://www.htw-berlin.de/datenschutz/">Datenschutzerklärung</a>
+        </footer>
+    </div>
+    <main>
+        <div id="map-main">
+            <div id="header">
+                <div id="header-btn-add">
+                    <button class="btn-add-location">Add Location</button>
+                </div>
+                <div id="header-text">
+                    <p id="welcome-text"> Willkommen {User}! Diese Karte zeigt Strassen mit fehlenden Radwegen in
+                        Berlin</p>
+                </div>
+
+                <div id="header-btn-logout">
+                    <button class="btn-add-logout">Logout</button>
+                </div>
+
+            </div>
+            <div id="map-sidebar-wrapper">
+                <div id="sidebar-wrapper">
+                    <h2>Locations</h2>
+                </div>
+                <div id="map-screen">
+                </div>
+            </div>
+
+
+            <footer>
+                <a href="https://www.htw-berlin.de/impressum/">Impressum</a>
+                <a href="https://www.htw-berlin.de/datenschutz/">Datenschutzerklärung</a>
+            </footer>
+        </div>
+
+    </main>
+
+    <div id="add-location-wrapper">
+        <div id="add-wrapper">
+            <div id="icon-form-container">
+                <button id="cancel-oval-button2">
+                    <i class="fa-solid fa-circle-xmark" style="color: #ff0000; font-size: 60px;"></i>
+                </button>
+                <div id="box-for-form">
+                    <p id="headline">Add new Location</p>
+                    <form id="add-form" method="get" action="/">
+                        <div id="input-wrapper">
+                            <input id="add-location-titel" type="text" placeholder="Name der Location" required>
+                            <input id="add-location-description" type="text" placeholder="Beschreibung">
+                            <input id="add-location-address" type="text" placeholder="Adresse" required>
+                        </div>
+                        <div id="btn-add-wrapper">
+                            <button id="btn-add"class="btn-add" type="submit">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <a href="https://www.htw-berlin.de/impressum/">Impressum</a>
+            <a href="https://www.htw-berlin.de/datenschutz/">Datenschutzerklärung</a>
+        </footer>
+    </div>
+    <div id="delete-wrapper">
+        <div id="add-wrapper">
+            <div id="icon-form-container">
+                <button id="cancel-oval-button">
+                    <i class="fa-solid fa-circle-xmark" style="color: #ff0000; font-size: 60px;"></i>
+                </button>
+                <div id="box-for-form">
+                    <p id="headline">Update/Delete Location</p>
+                    <form id="change-form" method="get" action="/">
+                        <div id="input-wrapper">
+
+                            <div id="iframeContainer">
+                                <div id="locations-panel-list">
+                                    <li class="location-result" data-location-index="0">
+                                        <a class="select-location">
+                                            <h2 class="name">Oranienstraße</h2>
+                                        </a>
+                                        <div class="address">Oranienstraße<br>Berlin, Germany</div>
+                                    </li>
+                                </div>
+                            </div>
+                            <p class="change-info">Titel</p>
+                            <div id="titel-error" class="change-info"></div>
+                            <input id="change-title" type="text"  required>
+                            <p class="change-info">Description</p>
+                            <input id="change-description" type="text" ">
+                            <p class="change-info">Address</p>
+                            <div id="address-error" class="change-info"></div>
+                            <input id="change-adress" type="text" required>
+                        </div>
+                        <div id="btn-add-wrapper">
+                            <div id="edit-delete-icons">
+                                <button id="edit-button" type="button">
+                                    <img src="Edit.svg" alt="Edit Icon" class="edit-icon">
+                                </button>
+                                <button id="delete-button" type="button">
+                                    <img src="Delete.svg" alt="Delete Icon" class="delete-icon">
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <a href="https://www.htw-berlin.de/impressum/">Impressum</a>
+            <a href="https://www.htw-berlin.de/datenschutz/">Datenschutzerklärung</a>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>

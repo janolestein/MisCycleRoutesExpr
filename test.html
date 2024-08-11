@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9k6rAoH2sm79I2NP6EveE4Ur6uaRVjyw&callback=initMap&libraries=places">
+    </script>
+
+<head>
+</head>
+
+<body>
+
+
+    <div id="login-wrapper-wrapper">
+        <div id="login-wrapper">
+            <p id="headline-1stPage">Berlins Missing Bikelanes</p>
+            <form id="login-form" method="get" action="/">
+                <div id="input-wrapper">
+                    <div id="username-error"></div>
+                    <input id="username-form" type="text" placeholder="Username" required>
+                    <div id="password-error"></div>
+                    <input id="password-form" type="password" placeholder="Password" required>
+                </div>
+                <div id="btn-wrapper">
+                    <button id="login-btn" type="submit" class="btnLogin">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <main>
+        <div id="map-main">
+            <div id="header">
+                <div id="header-btn-add">
+                    <button class="btn-add-location">Location hinzufügen</button>
+                </div>
+                <div id="header-text">
+                    <p id="welcome-text"> Willkommen {User}! Diese Karte zeigt Strassen mit fehlenden Radwegen in
+                        Berlin</p>
+                </div>
+
+                <div id="header-btn-logout">
+                    <button class="btn-add-logout">Logout</button>
+                </div>
+
+            </div>
+            <div id="map-screen">
+
+            </div>
+            <footer>
+                <a href="">Impressum</a>
+                <a href="">Datenschutzerklärung</a>
+            </footer>
+        </div>
+
+    </main>
+
+    <div id="add-location-wrapper">
+        <div id="add-wrapper">
+            <div id="icon-form-container">
+                <button id="cancel-oval-button2">
+                    <i class="fa-solid fa-circle-xmark" style="color: #ff0000; font-size: 60px;"></i>
+                </button>
+                <div id="box-for-form">
+                    <p id="headline">Neue Location hinzufügen</p>
+                    <form method="get">
+                        <div id="input-wrapper">
+                            <input type="text" placeholder="Name der Location" required>
+                            <input type="text" placeholder="Beschreibung">
+                            <input id="adress-input" type="text" placeholder="Adresse" required>
+                        </div>
+                        <div id="btn-add-wrapper">
+                            <button class="btn-add">Hinzufügen</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="delete-wrapper">
+        <div id="add-wrapper">
+            <div id="icon-form-container">
+                <button id="cancel-oval-button">
+                    <i class="fa-solid fa-circle-xmark" style="color: #ff0000; font-size: 60px;"></i>
+                </button>
+                <div id="box-for-form">
+                    <p id="headline">Aktualisieren/Löschen der Location</p>
+                    <form method="get">
+                        <div id="input-wrapper">
+
+                            <div id="iframeContainer">
+                                <div id="locations-panel-list">
+                                    <li class="location-result" data-location-index="0">
+                                        <button class="select-location">
+                                            <h2 class="name">Oranienstraße</h2>
+                                        </button>
+                                        <div class="address">Oranienstraße<br>Berlin, Germany</div>
+                                        <a class="directions-button"
+                                            href="https://www.google.com/maps/dir/?api=1&amp;origin=&amp;destination=Oranienstra%C3%9Fe%2CBerlin%2C+Germany"
+                                            target="_blank" title="Get directions to this location on Google Maps">
+                                            <svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M17.5867 9.24375L17.9403 8.8902V8.8902L17.5867 9.24375ZM16.4117 9.24375L16.7653 9.59731L16.7675 9.59502L16.4117 9.24375ZM8.91172 16.7437L8.55817 16.3902L8.91172 16.7437ZM8.91172 17.9229L8.55817 18.2765L8.55826 18.2766L8.91172 17.9229ZM16.4117 25.4187H16.9117V25.2116L16.7652 25.0651L16.4117 25.4187ZM16.4117 25.4229H15.9117V25.63L16.0582 25.7765L16.4117 25.4229ZM25.0909 17.9229L25.4444 18.2765L25.4467 18.2742L25.0909 17.9229ZM25.4403 16.3902L17.9403 8.8902L17.2332 9.5973L24.7332 17.0973L25.4403 16.3902ZM17.9403 8.8902C17.4213 8.3712 16.5737 8.3679 16.0559 8.89248L16.7675 9.59502C16.8914 9.4696 17.1022 9.4663 17.2332 9.5973L17.9403 8.8902ZM16.0582 8.8902L8.55817 16.3902L9.26527 17.0973L16.7653 9.5973L16.0582 8.8902ZM8.55817 16.3902C8.0379 16.9105 8.0379 17.7562 8.55817 18.2765L9.26527 17.5694C9.13553 17.4396 9.13553 17.227 9.26527 17.0973L8.55817 16.3902ZM8.55826 18.2766L16.0583 25.7724L16.7652 25.0651L9.26517 17.5693L8.55826 18.2766ZM15.9117 25.4187V25.4229H16.9117V25.4187H15.9117ZM16.0582 25.7765C16.5784 26.2967 17.4242 26.2967 17.9444 25.7765L17.2373 25.0694C17.1076 25.1991 16.895 25.1991 16.7653 25.0694L16.0582 25.7765ZM17.9444 25.7765L25.4444 18.2765L24.7373 17.5694L17.2373 25.0694L17.9444 25.7765ZM25.4467 18.2742C25.9631 17.7512 25.9663 16.9096 25.438 16.3879L24.7354 17.0995C24.8655 17.2279 24.8687 17.4363 24.7351 17.5716L25.4467 18.2742Z"
+                                                    fill="#1967d2"></path>
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M19 19.8333V17.75H15.6667V20.25H14V16.9167C14 16.4542 14.3708 16.0833 14.8333 16.0833H19V14L21.9167 16.9167L19 19.8333Z"
+                                                    fill="#1967d2"></path>
+                                                <circle class="directions-button-background" cx="17" cy="17" r="16.5"
+                                                    stroke="#e0e0e0"></circle>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </div>
+                            </div>
+                            <input type="text" placeholder="Oranienstraße" required>
+                            <input type="text" placeholder="oranienstraße">
+                            <input type="text" placeholder="Berlin, Germany" required>
+                        </div>
+                        <div id="btn-add-wrapper">
+                            <div id="edit-delete-icons">
+                                <button class="edit-button">
+                                    <img src="Edit.svg" alt="Edit Icon" class="edit-icon">
+                                </button>
+                                <button class="delete-button">
+                                    <img src="Delete.svg" alt="Delete Icon" class="delete-icon">
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
